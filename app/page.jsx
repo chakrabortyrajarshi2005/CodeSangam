@@ -60,6 +60,7 @@ import {
   ZoomOutIcon,
 } from "lucide-react";
 import { useState } from "react";
+import { UserButton } from "@clerk/nextjs";
 
 export default function DialogDemo() {
   const [open, setOpen] = useState(false);
@@ -255,6 +256,7 @@ export default function DialogDemo() {
           </Command>
         </CommandDialog>
       </div>
+      <UserButton/>
     </div>
   );
 }
