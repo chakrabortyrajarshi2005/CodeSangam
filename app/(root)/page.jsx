@@ -102,7 +102,7 @@ export default async function Home() {
           <h1 className="text-2xl md:text-5xl lg:text-6xl font-black text-gray-900 dark:text-white leading-tight mb-8">
             Master{" "}
             <span className="relative inline-block">
-              <span className="px-6 py-3 bg-amber-500 dark:bg-amber-400 text-white dark:text-gray-900 rounded-2xl transform -rotate-1 inline-block shadow-lg">
+              <span className="px-20 py-10 bg-blue-500 dark:bg-blue-400 text-white dark:text-white rounded-2xl transform -rotate-1 inline-block shadow-amber-500">
                 Problem
               </span>
             </span>{" "}
@@ -127,7 +127,7 @@ export default async function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <Button
               size="lg"
-              className="bg-amber-500 hover:bg-amber-600 dark:bg-amber-400 dark:hover:bg-amber-500 text-white dark:text-gray-900 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all">
+              className="bg-blue-500 hover:bg-indigo-600 dark:bg-blue-400 dark:hover:bg-indigo-500 text-white dark:text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all">
               <Play className="w-5 h-5 mr-2" />
               Start Coding Now
               <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -164,7 +164,7 @@ export default async function Home() {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
               Everything you need to{" "}
-              <span className="text-amber-600 dark:text-amber-400">excel</span>
+              <span className="text-blue-600 dark:text-blue-400">excel</span>
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               Our platform provides comprehensive tools and resources to help
@@ -263,7 +263,7 @@ export default async function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-r from-amber-600 to-amber-300  dark:from-amber-600 dark:to-indigo-600 rounded-md">
+      <section className="py-24 bg-gradient-to-r from-blue-400 to-violet-600  dark:from-green-600 dark:to-indigo-600 rounded-md">
         <div className="max-w-4xl mx-auto text-center px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Ready to start your coding journey?
