@@ -6,7 +6,6 @@ import { currentUser } from "@clerk/nextjs/server";
 export const userOnBoard = async () => {
   try {
     const user = await currentUser();
-
     if (!user) {
       return {
         success: false,
@@ -15,9 +14,7 @@ export const userOnBoard = async () => {
     }
 
     const { id, firstName, lastName, imageUrl, emailAddresses } = user;
-
     const email = emailAddresses[0]?.emailAddress || "";
-
     const newUser = await db.user.upsert({
       where: {
         clerkId: id,
@@ -36,7 +33,6 @@ export const userOnBoard = async () => {
         email,
       },
     });
-
     return {
       success: true,
       user: newUser,
@@ -44,10 +40,39 @@ export const userOnBoard = async () => {
     };
   } catch (error) {
     console.log("Error in user onboarding:", error);
-
     return {
       success: false,
       error: "Failed to onboard user",
+    };
+  }
+};
+
+export const currentUserRole = async () => {
+  try {
+    const user = await currentUser();
+    if (!user) {
+      return {
+        success: false,
+        error: "User is not authenticated",
+      };
+    }
+
+    const { id } = user;
+    const userRole = await db.user.findUnique({
+      where: {
+        clerkId: id,
+      },
+      select: {
+        role: true,
+      },
+    });
+    return userRole.role;
+  } catch (error) {
+    console.log("Error in user-admin switching between roles:", error);
+
+    return {
+      success: false,
+      error: "Failed to switching roles between user and admin",
     };
   }
 };
