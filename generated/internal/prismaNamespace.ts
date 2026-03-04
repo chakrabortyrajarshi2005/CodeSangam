@@ -54,8 +54,6 @@ export const raw = runtime.raw
 export const Sql = runtime.Sql
 export type Sql = runtime.Sql
 
-
-
 /**
  * Decimal.js
  */
@@ -108,7 +106,6 @@ export type InputJsonObject = runtime.InputJsonObject
 export type InputJsonArray = runtime.InputJsonArray
 export type InputJsonValue = runtime.InputJsonValue
 
-
 export const NullTypes = {
   DbNull: runtime.objectEnumValues.classes.DbNull as (new (secret: never) => typeof runtime.objectEnumValues.instances.DbNull),
   JsonNull: runtime.objectEnumValues.classes.JsonNull as (new (secret: never) => typeof runtime.objectEnumValues.instances.JsonNull),
@@ -132,7 +129,6 @@ export const JsonNull = runtime.objectEnumValues.instances.JsonNull
  * @see https://www.prisma.io/docs/concepts/components/prisma-client/working-with-fields/working-with-json-fields#filtering-on-a-json-field
  */
 export const AnyNull = runtime.objectEnumValues.instances.AnyNull
-
 
 type SelectAndInclude = {
   select: any
