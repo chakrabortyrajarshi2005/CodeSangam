@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Leetcode",
-  description: "Leetcode Clone",
+  title: "CodeSangam",
+  description: "CodeSangam : LeetCode For Indian DSA Enthusiast",
 };
 
 export default function RootLayout({ children }) {
