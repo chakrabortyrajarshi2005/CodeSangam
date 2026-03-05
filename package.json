@@ -1,6 +1,7 @@
 {
   "name": "codesangam",
   "version": "0.1.0",
+  "description": "CodeSangam : LeetCode For Indian DSA Enthusiast",
   "private": true,
   "scripts": {
     "dev": "next dev --webpack",
