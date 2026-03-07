@@ -45,9 +45,9 @@ const Navbar = ({ userRole }) => {
           <div className="flex items-center gap-4">
             <ModeToggle />
             <SignedIn>
-              {userRole == { UserRole } && (
+              {userRole === "ADMIN" && (
                 <Link href={"/create-problem"}>
-                  <Button variant={"outline"} size={"default"}>
+                  <Button variant="outline" size="default">
                     Create Problem
                   </Button>
                 </Link>
