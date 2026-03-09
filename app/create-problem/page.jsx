@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/ui/mode-toggle";
-// import CreateProblemForm from "@/modules/problems/components/create-problem-form";
+import CreateProblemForm from "@/modules/problems/components/create-problem-form";
 import { currentUser } from "@clerk/nextjs/server";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
@@ -31,7 +31,7 @@ const CreateProblemPage = async () => {
         </h1>
         <ModeToggle />
       </div>
-      {/* <CreateProblemForm /> */}
+      <CreateProblemForm /> 
     </section>
   );
 };
