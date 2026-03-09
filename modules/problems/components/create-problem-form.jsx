@@ -538,6 +538,342 @@ public class Main {
   },
 };
 
+const twoSumProblem = {
+  title: "Two Sum",
+  description:
+    "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target. You may assume that each input would have exactly one solution, and you may not use the same element twice.",
+  difficulty: "EASY",
+  tags: ["Array", "Hash Table"],
+  constrains:
+    "2 <= nums.length <= 10^4\n-10^9 <= nums[i] <= 10^9\n-10^9 <= target <= 10^9\nOnly one valid answer exists.",
+  hints:
+    "Use a hash map to store numbers you've already seen and check if the complement exists.",
+  editorial:
+    "Traverse the array while storing visited numbers in a hash map. For each element, check if target - nums[i] already exists in the map. If yes, return their indices.",
+  testcases: [
+    {
+      input: "nums = [2,7,11,15], target = 9",
+      output: "[0,1]",
+    },
+    {
+      input: "nums = [3,2,4], target = 6",
+      output: "[1,2]",
+    },
+    {
+      input: "nums = [3,3], target = 6",
+      output: "[0,1]",
+    },
+  ],
+  examples: {
+    JAVASCRIPT: {
+      input: "nums = [2,7,11,15], target = 9",
+      output: "[0,1]",
+      explanation: "nums[0] + nums[1] == 9",
+    },
+    PYTHON: {
+      input: "nums = [2,7,11,15], target = 9",
+      output: "[0,1]",
+      explanation: "nums[0] + nums[1] == 9",
+    },
+    JAVA: {
+      input: "nums = [2,7,11,15], target = 9",
+      output: "[0,1]",
+      explanation: "nums[0] + nums[1] == 9",
+    },
+  },
+  codesnippets: {
+    JAVASCRIPT: `/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+function twoSum(nums, target) {
+  // Write your code here
+}
+
+const readline = require('readline');
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+  terminal: false
+});
+
+rl.on('line', (line) => {
+  const data = JSON.parse(line);
+  const result = twoSum(data.nums, data.target);
+  console.log(JSON.stringify(result));
+  rl.close();
+});`,
+    PYTHON: `class Solution:
+    def twoSum(self, nums, target):
+        # Write your code here
+        pass
+
+if __name__ == "__main__":
+    import sys, json
+    data = json.loads(sys.stdin.readline())
+    nums = data["nums"]
+    target = data["target"]
+
+    sol = Solution()
+    result = sol.twoSum(nums, target)
+
+    print(result)`,
+    JAVA: `import java.util.*;
+
+public class Main {
+
+    public static int[] twoSum(int[] nums, int target) {
+        
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String json = sc.nextLine();
+    }
+}`,
+  },
+  referencesolutions: {
+    JAVASCRIPT: `function twoSum(nums, target) {
+  const map = new Map();
+
+  for (let i = 0; i < nums.length; i++) {
+    const complement = target - nums[i];
+
+    if (map.has(complement)) {
+      return [map.get(complement), i];
+    }
+
+    map.set(nums[i], i);
+  }
+}
+
+const readline = require('readline');
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+  terminal: false
+});
+
+rl.on('line', (line) => {
+  const data = JSON.parse(line);
+  const result = twoSum(data.nums, data.target);
+  console.log(JSON.stringify(result));
+  rl.close();
+});`,
+    PYTHON: `class Solution:
+    def twoSum(self, nums, target):
+        hashmap = {}
+
+        for i, num in enumerate(nums):
+            complement = target - num
+
+            if complement in hashmap:
+                return [hashmap[complement], i]
+
+            hashmap[num] = i
+
+if __name__ == "__main__":
+    import sys, json
+    data = json.loads(sys.stdin.readline())
+    nums = data["nums"]
+    target = data["target"]
+
+    sol = Solution()
+    result = sol.twoSum(nums, target)
+
+    print(result)`,
+    JAVA: `import java.util.*;
+
+public class Main {
+
+    public static int[] twoSum(int[] nums, int target) {
+        HashMap<Integer,Integer> map = new HashMap<>();
+
+        for(int i=0;i<nums.length;i++){
+            int complement = target - nums[i];
+
+            if(map.containsKey(complement)){
+                return new int[]{map.get(complement), i};
+            }
+
+            map.put(nums[i], i);
+        }
+
+        return new int[]{};
+    }
+}`,
+  },
+};
+const addBinaryProblem = {
+  title: "Add Binary",
+  description:
+    "Given two binary strings a and b, return their sum as a binary string.",
+  difficulty: "EASY",
+  tags: ["Math", "String", "Bit Manipulation"],
+  constrains:
+    "1 <= a.length, b.length <= 10^4\na and b consist only of '0' or '1'.",
+  hints: "Simulate binary addition from the end of the strings using carry.",
+  editorial:
+    "Start from the end of both strings and simulate binary addition. Maintain a carry and append the result digit to a string builder.",
+  testcases: [
+    {
+      input: 'a = "11", b = "1"',
+      output: '"100"',
+    },
+    {
+      input: 'a = "1010", b = "1011"',
+      output: '"10101"',
+    },
+  ],
+  examples: {
+    JAVASCRIPT: {
+      input: 'a = "11", b = "1"',
+      output: '"100"',
+      explanation: "11 + 1 = 100",
+    },
+    PYTHON: {
+      input: 'a = "11", b = "1"',
+      output: '"100"',
+      explanation: "11 + 1 = 100",
+    },
+    JAVA: {
+      input: 'a = "11", b = "1"',
+      output: '"100"',
+      explanation: "11 + 1 = 100",
+    },
+  },
+  codesnippets: {
+    JAVASCRIPT: `/**
+ * @param {string} a
+ * @param {string} b
+ * @return {string}
+ */
+function addBinary(a, b) {
+  // Write your code here
+}
+
+const readline = require('readline');
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+  terminal: false
+});
+
+rl.on('line', (line) => {
+  const data = JSON.parse(line);
+  const result = addBinary(data.a, data.b);
+  console.log(result);
+  rl.close();
+});`,
+    PYTHON: `class Solution:
+    def addBinary(self, a: str, b: str) -> str:
+        # Write your code here
+        pass
+
+if __name__ == "__main__":
+    import sys, json
+    data = json.loads(sys.stdin.readline())
+
+    sol = Solution()
+    result = sol.addBinary(data["a"], data["b"])
+
+    print(result)`,
+    JAVA: `import java.util.*;
+
+public class Main {
+
+    public static String addBinary(String a, String b) {
+        
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+    }
+}`,
+  },
+  referencesolutions: {
+    JAVASCRIPT: `function addBinary(a, b) {
+  let i = a.length - 1;
+  let j = b.length - 1;
+  let carry = 0;
+  let result = "";
+
+  while (i >= 0 || j >= 0 || carry) {
+    let sum = carry;
+
+    if (i >= 0) sum += Number(a[i--]);
+    if (j >= 0) sum += Number(b[j--]);
+
+    result = (sum % 2) + result;
+    carry = Math.floor(sum / 2);
+  }
+
+  return result;
+}
+
+const readline = require('readline');
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+  terminal: false
+});
+
+rl.on('line', (line) => {
+  const data = JSON.parse(line);
+  const result = addBinary(data.a, data.b);
+  console.log(result);
+  rl.close();
+});`,
+    PYTHON: `class Solution:
+    def addBinary(self, a: str, b: str) -> str:
+        i = len(a) - 1
+        j = len(b) - 1
+        carry = 0
+        result = []
+
+        while i >= 0 or j >= 0 or carry:
+            total = carry
+
+            if i >= 0:
+                total += int(a[i])
+                i -= 1
+
+            if j >= 0:
+                total += int(b[j])
+                j -= 1
+
+            result.append(str(total % 2))
+            carry = total // 2
+
+        return ''.join(reversed(result))`,
+    JAVA: `import java.util.*;
+
+public class Main {
+
+    public static String addBinary(String a, String b) {
+        StringBuilder result = new StringBuilder();
+
+        int i = a.length() - 1;
+        int j = b.length() - 1;
+        int carry = 0;
+
+        while(i >= 0 || j >= 0 || carry == 1){
+
+            int sum = carry;
+
+            if(i >= 0) sum += a.charAt(i--) - '0';
+            if(j >= 0) sum += b.charAt(j--) - '0';
+
+            result.append(sum % 2);
+            carry = sum / 2;
+        }
+
+        return result.reverse().toString();
+    }
+}`,
+  },
+};
 const CodeEditor = ({ value, onChange, language = "javascript" }) => {
   // Map language names to Monaco Editor language IDs
   const languageMap = {
