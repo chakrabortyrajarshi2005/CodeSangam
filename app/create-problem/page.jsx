@@ -19,7 +19,7 @@ const CreateProblemPage = async () => {
 
         <h1 className="text-3xl font-bold text-sky-300">
           Welcome <span className="text-white">{user?.firstName}</span> on
-          <span className="text-purple-600">
+          <span className="text-purple-700">
             {" "}
             Code<span className="text-red-300">Sangam !</span>
           </span>
